@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5 pt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Create Article</h3>
+                    </div>
+                    <div class="card-body">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger alert-dismissible" role="alert" >
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <form class="login-form" method="POST" action="{% url "articles:create" %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Title <span class="text-danger">*</span></label>
+                                        {{ form.title }}
+                                        <small class="text-danger">{{ form.errors.title|striptags }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Content <span class="text-danger">*</span></label>
+                                        {{ form.content }}
+                                        <small class="text-danger">{{ form.errors.content|striptags }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Category <span class="text-danger">*</span></label>
+                                        {{ form.category }}
+                                        <small class="text-danger">{{ form.errors.category|striptags }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Image <span class="text-danger">*</span></label>
+                                        {{ form.image }}
+                                        <small class="text-danger">{{ form.errors.image|striptags }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-0 mt-3">
+                                    <button class="btn btn-primary w-100" type="submit">Create Article</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
