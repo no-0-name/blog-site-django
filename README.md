@@ -16,13 +16,13 @@ This is a blog site built with Django and Postgresql. The site allows users to c
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/django-blog-site.git
+git clone https://github.com/no-0-name/blog-site-django.git
 ```
 
 2. Navigate to the project directory
 
 ```bash
-cd django-blog-site
+cd blog-site-django
 ```
 
 3. Install the project dependencies
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 4. Set up the database
 
    - Install Postgresql and create a new database for the project.
-   - Open `django-blog-site/settings.py` and update the `DATABASES` configuration with your database details.
+   - Open `blog-site-django/settings.py` and update the `DATABASES` configuration with your database details.
 
 5. Apply database migrations
 
