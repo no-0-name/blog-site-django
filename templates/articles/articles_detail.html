@@ -26,24 +26,24 @@
 
     <div class="container mt-5 mb-5">
         <div class="d-flex justify-content-center row">
-          <div class="d-flex flex-column col-md-8">
-              <div class="coment-bottom bg-white p-2 px-4">
-                  <form method="post" style="margin-top: 1.3em;">
-                      {{ form.as_p }}
-                      {% csrf_token %}
-                      <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-                  </form>
-          {% for comment in comments %}
-          <div class="commented-section mt-2">
-                <div class="d-flex flex-row align-items-center commented-user">
-                    <h5 class="mr-2">{{ comment.user }}</h5>
-                    <span class="mb-1 ml-2">{{ comment.created }}</span>
+            <div class="d-flex flex-column col-md-8">
+                <div class="coment-bottom bg-white p-2 px-4">
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                    </form>
+            {% for comment in comments %}
+                <div class="commented-section mt-2">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                        <h5 class="mr-2">{{ comment.user }}</h5>
+                        <span class="mb-1 ml-2">{{ comment.created }}</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>{{ comment.content|linebreaksbr }}</span>
+                    </div>
                 </div>
-                <div class="comment-text-sm">
-                  <span>{{ comment.content|linebreaksbr }}</span>
-                </div>
-              </div>
-          {% endfor %}
+            {% endfor %}
   </div>
   </div>
   </div>
