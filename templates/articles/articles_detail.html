@@ -19,7 +19,6 @@
                 <div class="card-text p-4">
                     {{ article.content }}
                 </div>
-                </div>
             </div>
         </div>
     </div>  
@@ -33,20 +32,19 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
                     </form>
-            {% for comment in comments %}
-                <div class="commented-section mt-2">
-                    <div class="d-flex flex-row align-items-center commented-user">
-                        <h5 class="mr-2">{{ comment.user }}</h5>
-                        <span class="mb-1 ml-2">{{ comment.created }}</span>
-                    </div>
-                    <div class="comment-text-sm">
-                      <span>{{ comment.content|linebreaksbr }}</span>
-                    </div>
+                    {% for comment in comments %}
+                        <div class="commented-section mt-2">
+                            <div class="d-flex flex-row align-items-center commented-user">
+                                <h5 class="mr-2">{{ comment.user }}</h5>
+                                <span class="mb-1 ml-2">{{ comment.created }}</span>
+                            </div>
+                            <div class="comment-text-sm">
+                              <span>{{ comment.content|linebreaksbr }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-  </div>
-  </div>
-  </div>
-  </div>
-  </div> 
+            </div>
+        </div>
+    </div> 
 {% endblock %}
