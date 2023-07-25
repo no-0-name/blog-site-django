@@ -46,6 +46,13 @@ def articles_detail(request, pk):
                                                               'form': form})
 
 
+@login_required
+def articles_user(request):
+    articles = Article.objects.filter(author=request.user)
+
+    return render(request, 'articles/articles_user.html', {'articles': articles})
+
+
 @login_required()
 def articles_create(request):
     if request.method == 'POST':
@@ -54,8 +61,39 @@ def articles_create(request):
             new_article = form.save(commit=False)
             new_article.author = request.user
             new_article.save()
-            return redirect('articles:list')
+            return redirect('articles:articles_user')
     else:
         form = ArticleForm()    
     
     return render(request, 'articles/articles_create.html', {'form': form})
+
+
+@login_required()
+def articles_edit(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    if request.user == article.author:
+        if request.method == 'POST':
+            form = ArticleForm(request.POST, request.FILES, instance=article)
+            if form.is_valid():
+                form.save()
+                return redirect('articles:articles_user')
+        else:
+            form = ArticleForm(instance=article)
+    else:
+        return redirect('articles:list')
+    
+    return render(request, 'articles/articles_edit.html', {'form': form,
+                                                           'article': article})
+
+
+@login_required()
+def articles_delete(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    if request.user == article.author:
+        if request.method == 'POST':
+            article.delete()
+            return redirect('articles:articles_user')
+    else:
+        return redirect('articles:list')
+
+    return render(request, 'articles/articles_delete.html', {'article': article})

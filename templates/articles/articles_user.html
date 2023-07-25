@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="main">
+        <div class="row">
+        {% for article in articles %}
+            <div class="card mt-4 col-lg-6 offset-lg-3 mb-3" style="width: 50rem;">
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <div class="text-muted mb-3">
+                        <div>
+                            <span>created: {{ article.created|date:"N j Y" }} |</span>
+                            <span>category: {{ article.category }} |</span>
+                            <span>author: {{ article.author }}</span>
+                        </div>
+                    </div>
+                    <p class="card-text">{{ article.content|truncatewords:30 }}</p>
+                    <a class="btn btn-primary" href="{% url "articles:detail" article.pk %}">Read more</a>
+                    <a class="btn btn-warning" href="{% url "articles:edit" article.pk %}">Edit</a>
+                    <a class="btn btn-danger" href="{% url "articles:delete" article.pk %}">Delete</a>
+                </div>
+              </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

@@ -29,6 +29,14 @@
             display: flex;
             justify-content: center;
         }
+        .center-column{
+            width:600px;
+            margin: 20px auto;
+            padding:20px;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 3px 2px 10px;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +48,7 @@
                 <a href="{% url "articles:list" %}" class="nav-item nav-link">Home</a>
                 {% if request.user.is_authenticated %}
                     <a href="{% url "articles:create" %}" class="nav-item nav-link">Create article</a>
+                    <a href="{% url "articles:articles_user" %}" class="nav-item nav-link">My articles</a>
                 {% endif %}
             </div>
             {% if request.user.is_authenticated %}

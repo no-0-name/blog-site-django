@@ -9,8 +9,9 @@
                     <h2 class="card-title text-center my-3">{{ article.title }}</h2>
                     <div class="text-muted text-center mb-3">
                         <div>
-                            created: {{ article.created|date:"N j Y" }},
-                            by {{ article.author }}
+                            <span>created: {{ article.created|date:"N j Y" }} |</span>
+                            <span>category: {{ article.category }} |</span>
+                            <span>author: {{ article.author }}</span>
                         </div>
                 </div>
                 {% if article.image %}

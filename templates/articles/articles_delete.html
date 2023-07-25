@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="center-column">
+        <p>Are you sure you want to delete article "{{article.title}}"?</p>
+        <form class="site-form" method="POST" action="{% url "articles:delete" article.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button class="btn btn-danger w-20" type="submit">Delete Article</button>
+            <a class="btn btn-secondary" href="{% url "articles:list" %}">Cancel</a>
+        </form>
+    </div>
+{% endblock content %}
