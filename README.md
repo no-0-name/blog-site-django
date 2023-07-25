@@ -6,7 +6,8 @@ This is a blog site built with Django and Postgresql. The site allows users to c
 ## Features
 
 - User registration and authentication
-- Create accounts, comments and posts
+- Create accounts and comments
+- Create, edit, delete articles
 - User-friendly and responsive interface
 - Easy to navigate and interact with
 - Database powered by Postgresql
