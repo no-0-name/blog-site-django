@@ -2,7 +2,7 @@
 
 This is a blog site built with Django and Postgresql. The site allows users to create, read, update, and delete blog posts. It also supports user registration and authentication, allowing users to create and manage their own posts.
 
-![blog-photo](https://github.com/no-0-name/blog-site-django/blob/main/blog-photo.png)
+![blog-photo](https://github.com/no-0-name/blog-site-django/blob/main/blog-django-photo.png)
 ## Features
 
 - User registration and authentication
