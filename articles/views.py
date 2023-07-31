@@ -46,7 +46,7 @@ def articles_detail(request, pk):
                                                               'form': form})
 
 
-@login_required
+@login_required()
 def articles_user(request):
     articles = Article.objects.filter(author=request.user)
 
