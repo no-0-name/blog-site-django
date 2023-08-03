@@ -1,57 +1,26 @@
-# Django Blog Site
+# Netflix Clone
 
-This is a blog site built with Django and Postgresql. The site allows users to create, read, update, and delete blog posts. It also supports user registration and authentication, allowing users to create and manage their own posts.
+This is a project that allows you to create a Netflix clone using React, Tailwind CSS, Firebase, and IMDB API. The project also supports user authentication and saving favorite movies in the Firebase database.
 
-![blog-photo](https://github.com/no-0-name/blog-site-django/blob/main/blog-django-photo.png)
-## Features
+## How to run the project
 
-- User registration and authentication
-- Create accounts and comments
-- Create, edit, delete articles
-- User-friendly and responsive interface
-- Easy to navigate and interact with
-- Database powered by Postgresql
+To run the project, you need to:
 
-## Installation
+1. Clone the repository from GitHub
+2. Install dependencies using the command `npm install`
+3. Create a `.env` file in the root folder of the project and add your API keys for Firebase and IMDB
+4. Run the project using the command `npm start`
+5. Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
-1. Clone the repository
+## How to contribute to the project
 
-```bash
-git clone https://github.com/no-0-name/blog-site-django.git
-```
+If you want to contribute to the project, you can:
 
-2. Navigate to the project directory
+- Create an issue with a description of the problem or improvement suggestion
+- Create a pull request with your code changes
+- Test the project and report any errors or bugs
+- Share the project with other people and give feedback
 
-```bash
-cd blog-site-django
-```
+## License
 
-3. Install the project dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up the database
-
-   - Install Postgresql and create a new database for the project.
-   - Open `blog-site-django/settings.py` and update the `DATABASES` configuration with your database details.
-
-5. Apply database migrations
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-6. Run the development server
-
-```bash
-python manage.py runserver
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+The project is distributed under the MIT license, which allows free use, modification, and distribution of the code. You can read more about the license in the LICENSE.md file in the project repository.
