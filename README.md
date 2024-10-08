@@ -11,6 +11,7 @@ This is a blog site built with Django and Postgresql. The site allows users to c
 - User-friendly and responsive interface
 - Easy to navigate and interact with
 - Database powered by Postgresql
+- Docker
 
 ## Installation
 
