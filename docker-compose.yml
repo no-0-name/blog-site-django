@@ -8,9 +8,9 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=blog
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=YOUR_DB_NAME
+      - POSTGRES_USER=YOUR_DB_USER
+      - POSTGRES_PASSWORD=YOUR_PASSWORD
     ports:
       - 5432:5432
 
